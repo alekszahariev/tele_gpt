@@ -1,89 +1,18 @@
-HARD
-"hard", "rough", "fast", "harder",
-
-BLOWJOB
-"suck" , "sucking" , "eating" , "eat" , "give", "lick"
-
-69
-"69" , "sixtynine",
+- Process of PUBLIC teaching
 
 
 
+Every prompt will be stored as well as the result. 
+When a video is generated it will ask for feedback (YES, NO)
 
-BLONDE
-"blonde" , "blondy",
+Then it will save the prompt and the result in the database.
+If result ends up with "NO" then this video will not be sent anymore. 
+It will wait for the same prompt and someone has to click "yes" then it will update the AI to send the correct video.
 
-Missionary
-"missionary",
+So first we make a check if there is the same prompt in the database. If there is the same prompt and result = YES we send the video.
+If prompt is the same and result = NO we dont send the stored video but we send different video and we wait for them to click YES so we can update the database.
 
-Small
-"small", "tiny", "thin", "short",
+If there is no PRMOPT in the database we send feedback and review.
+If there is PRMOPT and result = YES we never send feedback again.
 
-Look
-"look", "see", "watch", "eyes"
-
-Handjob
-"grab", "hold", "handjob",
-
-Hand
-"hand", "finger", "fingers",
-
-In front of me
-"front", "knee", "knees", "floor", "crouch",
-
-Hold/Touch
-"hold", "grab", "touch",
-
-Spread 
- "spread","cheeks"
-
-Cum
-"cum", "finish", "end", "cumm",
-
-Tits
-"tits", "boobs",
-
-Bed
-"laying", "bed", "couch", "sofa",
-
-floor
-"floor", "ground", "carpet", "tiles"
-
-Oil
-"oil", "oily", "shiny",
-
-Soft
-"gentle", "soft", "softly", "slow", "nice", "passionate",
-
-Moan
-"moan", "scream", "talking",
-
-Behind / Doggy style 
-"back", "doggy", "behind",
-
-Play/Masturbate
-"play", "masturbate",
-
-Alone
-"alone", "self", "yourself",
-
-Fingering
-"finger", "fingering",
-
-Anal
-"anal","ass","hole","asshole",
-
-Outdoor
-"outside", "outdoor", "out", "terrace", "balkon"
-
-Ride
-"riding", "ride", "cowgirl"
-
-Eat
-"eat", "eating", "lick"
-
-black
-"black", "bbc"
-
-Double Penetration
-"double", "threesome", "two", "friend", "brother", "collegue"
+If link is expired we delete result and send other video

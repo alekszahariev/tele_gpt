@@ -1,74 +1,124 @@
 
-// Define a dictionary of categories and their synonyms
-const synonymMap = {
-    'blowjob': ["suck" , "sucking" , "eating", "eat" , "give", "lick", "blowjob", "blowing", "blow"],
-    'Fuck': ["fuck"],
-    'hard': ["hard", "rough", "fast", "harder",],
-    '69': ["69" , "sixtynine",],
-    'blonde': ["blonde" , "blondy",],
+  const synonymMapCategories = {
+    'what': {
+      'handjob': ["grab", "hold", "handjob",],
+      'blowjob': ["suck" , "sucking" , "eating", "eat" , "give", "lick", "blowjob", "blowing", "blow"],
+      'Fuck': ["fuck"],
+      'anal': ["anal","ass","hole","asshole",],
+      'pussy': ["pussy"],
+      'Pussy Masturbate': ["play", "masturbate", "alone", "self", "yourself", "squirt", "finger", "fingering",],
+      'Lick pussy': ["eat", "eating", "lick", "licking", "licks"],
+      
+    },
+
+    'pose': {
+      'spoon': ["spoon", "behind", "spooning"],
+      'doggy': ["back", "doggy", "behind",],
+      'ON knees': ["front", "knee", "knees", "floor", "crouch",],
+      '69': ["69" , "sixtynine",],
+      'cowgirl': ["riding", "ride", "cowgirl"],
+      'missionary': ["missionary"],
+      'Standing': ["standing", "stand", "against", "wall"]
+    },
+
+    'where': {
+      'floor': ["floor", "ground", "carpet", "tiles",],
+      'Public': ["outside", "outdoor", "forest", "out", "public"],
+      'balkon': ["balkon", "terrace", "teracce"],
+      'bed': ["laying", "bed", "bedroom"],
+      'couch': ["couch", "sofa", "lounge"],
+      'chair': ["chair", "stool"],
+      'bathroom' : ["bathroom", "toilet", "wc",],
+      'car' : ["car", "auto",],
+      'party': ["party", "disco", "nightclub", "club"],
+    },
+
+
+    'style': {
+      'soft': ["gentle", "soft", "softly", "slow", "nice", "passionate",],
+      'hard': ["hard", "rough", "fast", "harder",],
+
+      'MFM threesome': ["double", "threesome", "two", "friend", "brother", "collegue", "penetration", "men", "boys"],
+      'MFF threesome': ["double", "threesome", "two", "friend", "girls", "women", "ladies"],
+    },
+    'color': {
+          'black': ["black", "bbc"],
+          'white': ["white"],
+    },
+
+    'actions': {
+     'choke': ["choke", "throat",],
+     'smash': ["smash", "hit"],
+     'spit': ["spit"],
+     'Grab Boobs':["grab", "boobs", "tits"],
+     'Grab Ass':["grab", "ass", "cheeks"],
+     'Spread Ass': ["spread","cheeks", "ass"],
+
+    },
+    'extra': {
+    'blonde': ["blonde" , "blondy", "hair"],
+    'Redhead': ["redhead", "red", "hair"],
+    'Black Hair': ["black", "dark", "hair"],
     'small': ["small", "tiny", "thin", "short",],
     'look': ["look", "see", "watch", "eyes"],
-    'handjob': ["grab", "hold", "handjob",],
-    'hand': ["hand", "finger", "fingers",],
-    'ON knees': ["front", "knee", "knees", "floor", "crouch",],
-    'hold/touch': ["hold", "grab", "touch",],
-    'spread': ["spread","cheeks"],
+    'big': ["huge", "giant", "big", "long"],
     'cum': ["cum", "finish", "end", "cumm",],
-    'tits': ["tits", "boobs",],
-    'bed': ["laying", "bed", "couch", "sofa",],
-    'floor': ["floor", "ground", "carpet", "tiles",],
+    'mouth':["mouth", "tongue",],
+    'pussy':["pussy"],
+    'ass':["ass", "anal"],
+    'stomach':["stomach"],
+    'back':["back"],
     'oil': ["oil", "oily", "shiny",],
-    'soft': ["gentle", "soft", "softly", "slow", "nice", "passionate",
-  ],
-    'moan': ["moan", "scream", "talking",],
-    'doggy': ["back", "doggy", "behind",],
-    'masturbate': ["play", "masturbate",],
-    'alone': ["alone", "self", "yourself",],
-    'fingering': ["finger", "fingering",],
-    'anal': ["anal","ass","hole","asshole",],
-    'outdoor': ["outside", "outdoor", "out", "terrace", "balkon"],
-    'cowgirl': ["riding", "ride", "cowgirl"],
-    'eat': ["eat", "eating", "lick",],
-    'black': ["black", "bbc"],
-    'threesome': ["double", "threesome", "two", "friend", "brother", "collegue"],
     'closeup':["closeup", "zoom", "zoomed"],
-    'twoGirls' : ["girls", "ladies"]
-  
-  
-    // Add more categories and their synonyms as needed
-  };
-  
-  // Function to add keywords to the input field
-  function addKeywords(category) {
-    const keywords = synonymMap[category];
-    if (keywords) {
-      const inputField = document.getElementById('keywordInput');
-      const currentKeywords = inputField.value;
-      const newKeywords = keywords.join(', ');
-      if (currentKeywords.length > 0) {
-        inputField.value = currentKeywords + ', ' + newKeywords;
-      } else {
-        inputField.value = newKeywords;
-      }
-    } else {
-      console.error('Category not found');
     }
+  };
+
+   // Function to add keywords to the input field
+function addKeywords(category, keyword) {
+  const keywords = synonymMapCategories[category][keyword];
+  if (keywords) {
+    const inputField = document.getElementById('keywordInput');
+    const currentKeywords = inputField.value;
+    const newKeywords = keywords.join(', ');
+
+    // Split existing keywords by comma and remove leading/trailing whitespace
+    const existingKeywords = currentKeywords ? currentKeywords.split(',').map(keyword => keyword.trim()) : [];
+    
+    // Filter out duplicates
+    const uniqueKeywords = [...new Set([...existingKeywords, ...keywords])];
+    
+    inputField.value = uniqueKeywords.join(', '); // Set the input value to the unique keywords
+  } else {
+    console.error('Category or keyword not found');
   }
+}
   
   // Function to generate buttons for categories
-  function generateButtons() {
-    const buttonsContainer = document.getElementById('buttonsContainer');
-    for (const category in synonymMap) {
+function generateButtonsCategories() {
+  for (const category in synonymMapCategories) {
+    const columnId = category + 'Buttons';
+    const column = document.getElementById(columnId);
+    for (const keyword in synonymMapCategories[category]) {
       const button = document.createElement('button');
-      button.textContent = category.charAt(0).toUpperCase() + category.slice(1); // Capitalize the first letter of the category
-      button.addEventListener('click', () => addKeywords(category));
-      buttonsContainer.appendChild(button);
+      button.textContent = keyword.charAt(0).toUpperCase() + keyword.slice(1); // Capitalize the first letter of the keyword
+      button.addEventListener('click', () => {
+        addKeywords(category, keyword);
+        button.style.backgroundColor = 'darkgray'; // Change background color to darkgray when clicked
+      });
+      column.appendChild(button);
     }
   }
+}
+// Function to reset button colors to normal
+function resetButtonColors() {
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(button => {
+    button.style.backgroundColor = ''; // Reset background color to default
+  });
+}
   
   
-  
-  let videos = [];
+      let videos = [];
       let gifObjects = [];
       let currentIndex = 0;
   
@@ -103,7 +153,7 @@ const synonymMap = {
   
       // Function to create the GIF object and store it in the array
       function createGifObject() {
-    
+        resetButtonColors(); 
         const keywordInput = document.getElementById('keywordInput').value;
         document.getElementById('keywordInput').value = ""
         const keywords = keywordInput.split(',').map(keyword => keyword.trim());
@@ -131,4 +181,4 @@ const synonymMap = {
         });
       }
   // Call the function to generate buttons when the page loads
-  window.onload = generateButtons;
+  window.onload = generateButtonsCategories()
