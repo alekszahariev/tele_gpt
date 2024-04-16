@@ -21,3 +21,7 @@ input{
   video{
     max-width:400px;
   }
+
+  #buttonsContainer{
+    max-width: 800px;
+  }

@@ -1,7 +1,8 @@
 
 // Define a dictionary of categories and their synonyms
 const synonymMap = {
-    'blowjob': ["suck" , "sucking" , "eating", "eat" , "give", "lick"],
+    'blowjob': ["suck" , "sucking" , "eating", "eat" , "give", "lick", "blowjob", "blowing", "blow"],
+    'Fuck': ["fuck"],
     'hard': ["hard", "rough", "fast", "harder",],
     '69': ["69" , "sixtynine",],
     'blonde': ["blonde" , "blondy",],
@@ -30,6 +31,8 @@ const synonymMap = {
     'eat': ["eat", "eating", "lick",],
     'black': ["black", "bbc"],
     'threesome': ["double", "threesome", "two", "friend", "brother", "collegue"],
+    'closeup':["closeup", "zoom", "zoomed"],
+    'twoGirls' : ["girls", "ladies"]
   
   
     // Add more categories and their synonyms as needed
