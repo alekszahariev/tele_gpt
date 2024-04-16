@@ -14,10 +14,10 @@ Missionary
 "missionary",
 
 Small
-"small", "tiny", "thin",
+"small", "tiny", "thin", "short",
 
 Look
-"look", "see", "watch",
+"look", "see", "watch", "eyes"
 
 Handjob
 "grab", "hold", "handjob",
@@ -29,7 +29,10 @@ In front of me
 "front", "knee", "knees", "floor", "crouch",
 
 Hold/Touch
-"hold", "grab", "touch", "spread"
+"hold", "grab", "touch",
+
+Spread 
+ "spread","cheeks"
 
 Cum
 "cum", "finish", "end", "cumm",
