@@ -17,6 +17,7 @@
       'ON knees': ["front", "knee", "knees", "floor", "crouch",],
       '69': ["69" , "sixtynine",],
       'cowgirl': ["riding", "ride", "cowgirl"],
+      'reverse': ["reverse"],
       'missionary': ["missionary"],
       'Standing': ["standing", "stand", "against", "wall"]
     },
@@ -37,6 +38,7 @@
     'style': {
       'soft': ["gentle", "soft", "softly", "slow", "nice", "passionate",],
       'hard': ["hard", "rough", "fast", "harder",],
+      'POV': ["pov"],
 
       'MFM threesome': ["double", "threesome", "two", "friend", "brother", "collegue", "penetration", "men", "boys"],
       'MFF threesome': ["double", "threesome", "two", "friend", "girls", "women", "ladies"],
