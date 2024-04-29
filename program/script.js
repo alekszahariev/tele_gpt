@@ -39,6 +39,7 @@
       'soft': ["gentle", "soft", "softly", "slow", "nice", "passionate",],
       'hard': ["hard", "rough", "fast", "harder",],
       'POV': ["pov"],
+      'BDSM': ["bdsm","dominate","dominated"],
 
       'MFM threesome': ["double", "threesome", "two", "friend", "brother", "collegue", "penetration", "men", "boys"],
       'MFF threesome': ["double", "threesome", "two", "friend", "girls", "women", "ladies"],
@@ -46,6 +47,7 @@
     'color': {
           'black': ["black", "bbc"],
           'white': ["white"],
+          'tanned':["tanned"]
     },
 
     'actions': {
